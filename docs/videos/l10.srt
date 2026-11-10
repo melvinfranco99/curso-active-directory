@@ -1,0 +1,48 @@
+1
+00:00:00,450 --> 00:00:24,977
+En esta lección atacamos las credenciales directamente. Veremos cómo un
+atacante roba hashes y tickets de la memoria de un equipo y los reutiliza
+para hacerse pasar por otros usuarios, sin necesidad de conocer ni una
+
+2
+00:00:26,527 --> 00:01:15,896
+La raíz del problema ya la conoces de la lección de NTLM: en Windows, el
+hash de la contraseña funciona como credencial. Para autenticarte con NTLM
+no hace falta conocer la contraseña en claro; basta con poseer su hash. A
+
+3
+00:01:17,446 --> 00:02:07,918
+Veamos el robo en acción con Mimikatz, la herramienta más conocida para
+esto. Partimos de tener ya privilegios de administrador local en un
+equipo. Primero ejecutamos privilege dos puntos dos puntos debug, que nos
+
+4
+00:02:09,468 --> 00:02:57,252
+Con el hash robado en la mano, aplicamos Pass-the-Hash, es decir, pasar el
+hash. La idea es directa: como NTLM solo necesita el hash para autenticar,
+el atacante se conecta a otro equipo presentando ese hash en lugar de una
+
+5
+00:02:58,802 --> 00:03:46,514
+Veamos las dos variantes con comandos. En Pass-the-Hash, usamos
+CrackMapExec con la opción mayúscula H para pasar el hash NTLM robado en
+lugar de la contraseña; si funciona, obtenemos el mensaje Pwned y
+
+6
+00:03:48,064 --> 00:04:39,112
+Hay una variante aún más astuta que ni siquiera requiere robar y crackear
+nada: el NTLM Relay. Aquí el atacante se coloca como intermediario. Paso
+uno: engaña a una víctima para que intente autenticarse contra él, por
+
+7
+00:04:40,662 --> 00:05:37,974
+Veamos cómo defenderse, en dos frentes. Primero, evitar el robo.
+Credential Guard usa virtualización por hardware para aislar el proceso
+LSASS, de modo que ni siquiera un administrador local, ni Mimikatz, puede
+
+8
+00:05:39,524 --> 00:06:26,420
+Recapitulemos. En Windows, el hash y los tickets funcionan como
+credenciales, y quedan cacheados en la memoria de cada equipo, de donde un
+administrador local puede robarlos con herramientas como Mimikatz. Con
+

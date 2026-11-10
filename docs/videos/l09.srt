@@ -1,0 +1,42 @@
+1
+00:00:00,450 --> 00:00:29,321
+En esta lección vemos dos de los ataques más habituales y rentables contra
+Active Directory: el AS-REP Roasting y el Kerberoasting. Ambos tienen una
+característica temible: solo necesitan una cuenta de dominio normal y
+
+2
+00:00:30,871 --> 00:01:27,487
+Empecemos por el AS-REP Roasting. Recuerda de la lección de Kerberos que,
+normalmente, para pedir un TGT hay que preautenticarse: enviar un
+timestamp cifrado con tu contraseña. Pero algunas cuentas tienen esa
+
+3
+00:01:29,038 --> 00:02:16,629
+Veámoslo con comandos reales. Con el script GetNPUsers de Impacket, le
+pasamos una lista de usuarios y la opción no guion pass, que significa sin
+contraseña. La herramienta pregunta al KDC por cada uno. Para la mayoría,
+
+4
+00:02:18,180 --> 00:03:16,884
+Pasemos al Kerberoasting, probablemente el ataque más característico de
+AD. Recuerda que, en la segunda fase de Kerberos, cuando pides un ticket
+de servicio, el KDC te lo entrega cifrado con el hash de la cuenta que
+
+5
+00:03:18,434 --> 00:04:09,362
+Veamos el Kerberoasting con comandos. Con el script GetUserSPNs de
+Impacket, usando nuestra cuenta de dominio y la opción request, pedimos
+los tickets de todas las cuentas que tienen SPN. La herramienta nos lista
+
+6
+00:04:10,912 --> 00:05:04,912
+Vamos con la defensa, que en ambos casos es muy concreta. Contra el AS-REP
+Roasting, la medida principal es no desactivar la preautenticación salvo
+necesidad absoluta, y auditar periódicamente qué cuentas la tienen apagada
+
+7
+00:05:06,462 --> 00:05:52,566
+Recapitulemos. Lo más importante de estos dos ataques es que parten de una
+simple cuenta de dominio, sin privilegios. El AS-REP Roasting explota las
+cuentas que tienen desactivada la preautenticación, obteniendo material
+

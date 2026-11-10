@@ -1,0 +1,42 @@
+1
+00:00:00,450 --> 00:00:24,809
+Hemos visto cómo se ataca un dominio de principio a fin. Ahora toca
+blindarlo. En esta lección reunimos, de forma práctica y ordenada, las
+medidas de hardening que convierten un Active Directory vulnerable en uno
+
+2
+00:00:26,359 --> 00:01:18,415
+La mejor forma de entender el hardening es como una respuesta directa a
+los ataques que ya conocemos. Contra el Kerberoasting, cuentas gMSA y
+mínimos privilegios en las cuentas de servicio. Contra el AS-REP Roasting,
+
+3
+00:01:19,966 --> 00:02:12,406
+Detengámonos en LAPS, porque es una de las medidas con mejor relación
+entre esfuerzo e impacto. El problema que resuelve es clásico y grave: en
+muchísimas organizaciones, todos los equipos comparten la misma contraseña
+
+4
+00:02:13,955 --> 00:03:08,963
+El segundo gran pilar es proteger las cuentas y credenciales
+privilegiadas, que son el objetivo final del atacante. Las PAW, las
+estaciones de trabajo de acceso privilegiado, son equipos dedicados
+
+5
+00:03:10,514 --> 00:04:06,794
+El tercer pilar es la higiene continua, porque la seguridad de Active
+Directory se degrada sola con el tiempo si nadie la mantiene. Primero,
+revisa periódicamente los grupos privilegiados: pregúntate quién está en
+
+6
+00:04:08,344 --> 00:05:01,048
+Como todo esto puede abrumar, terminemos con un plan por prioridades,
+porque no se puede hacer todo a la vez. En la primera oleada, céntrate en
+lo de mayor impacto estructural: implantar el Tier Model con cuentas
+
+7
+00:05:02,598 --> 00:05:49,398
+Recapitulemos. El hardening de Active Directory se entiende mejor como la
+respuesta ordenada a cada ataque concreto que hemos estudiado. LAPS pone
+una contraseña local única en cada equipo y acaba con el Pass-the-Hash
+

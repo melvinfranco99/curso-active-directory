@@ -1,0 +1,54 @@
+1
+00:00:00,450 --> 00:00:22,193
+En la lección anterior vimos el panorama general de Active Directory.
+Ahora vamos a profundizar en su estructura lógica: los dominios, los
+árboles, los bosques y las unidades organizativas. Entender bien estas
+
+2
+00:00:23,743 --> 00:01:02,264
+Empecemos por el dominio, que es la unidad básica de Active Directory. Un
+dominio es una frontera de tres cosas a la vez: de administración, de
+replicación y de políticas. Dentro de un dominio puede haber uno o varios
+
+3
+00:01:03,814 --> 00:01:48,838
+Cuando una empresa crece, puede necesitar varios dominios. Si esos
+dominios comparten un espacio de nombres continuo, por ejemplo corp punto
+com, con eu punto corp punto com y us punto corp punto com por debajo,
+
+4
+00:01:50,388 --> 00:02:27,636
+Resumamos la jerarquía de mayor a menor en una tabla. En lo más alto está
+el bosque, el contenedor máximo y la frontera de seguridad. Dentro hay uno
+o varios árboles, que son conjuntos de dominios con un DNS contiguo. Cada
+
+5
+00:02:29,186 --> 00:03:17,210
+Dentro de un dominio, la organización no es plana: usamos unidades
+organizativas para crear una jerarquía interna. Una OU es como una carpeta
+que agrupa objetos. Sirven para tres cosas fundamentales. Primero, para
+
+6
+00:03:18,760 --> 00:04:07,696
+Hablemos de las relaciones de confianza, o trusts. Un trust es un puente
+que permite que los usuarios de un dominio accedan a recursos de otro.
+Dentro de un mismo bosque, estas confianzas son automáticas y transitivas:
+
+7
+00:04:09,246 --> 00:04:54,846
+Aunque los controladores de dominio replican entre sí como iguales, hay
+cinco operaciones tan delicadas que solo las puede realizar un controlador
+designado en cada momento. Son los roles FSMO, los cinco maestros de
+
+8
+00:04:56,396 --> 00:05:37,939
+Terminemos con algunas buenas prácticas de diseño, porque un directorio
+limpio es también más fácil de defender. Primera: usa el mínimo número de
+bosques posible, idealmente uno, porque cada bosque es una frontera de
+
+9
+00:05:39,490 --> 00:06:21,370
+Recapitulemos. El dominio es la unidad básica de administración,
+replicación y políticas. Los árboles y los bosques agrupan dominios, y
+conviene no olvidar nunca que el bosque, y no el dominio, es la verdadera
+

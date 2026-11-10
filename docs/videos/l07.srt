@@ -1,0 +1,48 @@
+1
+00:00:00,450 --> 00:00:26,225
+Antes de entrar en el módulo de hacking, necesitamos un marco defensivo
+claro, porque de nada sirve conocer los ataques si no sabemos cómo se
+contienen. En esta lección aprenderás el modelo de niveles, el Tier Model
+
+2
+00:00:27,775 --> 00:01:16,879
+Entendamos primero el problema que el modelo resuelve. En muchas
+organizaciones, un mismo administrador usa su cuenta potente para todo:
+entra en su portátil, en los servidores y también en el controlador de
+
+3
+00:01:18,430 --> 00:02:10,557
+La solución es el modelo de niveles, que divide la infraestructura en tres
+capas según su valor. El Tier cero, el más crítico, contiene todo lo que
+controla la identidad: los controladores de dominio, el propio Active
+
+4
+00:02:12,108 --> 00:03:04,668
+Veámoslo en forma de tabla práctica, que es como se aplica en el día a
+día. En el Tier cero, que protege los controladores, el propio AD, la
+cuenta krbtgt y la infraestructura de certificados, solo se usan las
+
+5
+00:03:06,218 --> 00:03:55,562
+El modelo de niveles se apoya en un principio más general: el de mínimos
+privilegios, que dice que cada cuenta debe tener solo los permisos justos
+para su función, ni uno más. En la práctica se traduce en varias reglas.
+
+6
+00:03:57,112 --> 00:04:46,264
+El Tier Model no va solo: se apoya en varias tecnologías que refuerzan la
+protección de credenciales y la gestión de secretos, y que estudiaremos en
+el módulo de defensa. Para proteger las credenciales tenemos las PAW,
+
+7
+00:04:47,814 --> 00:05:16,518
+Quiero que te lleves grabada esta idea, porque resume toda la lección: un
+administrador de dominio que inicia sesión en un portátil cualquiera acaba
+de regalar el dominio al primer atacante que comprometa ese equipo. Esa
+
+8
+00:05:18,068 --> 00:06:03,980
+Resumamos. El gran riesgo de Active Directory es la escalada por
+credenciales: las cuentas potentes dejan rastro en la memoria de cada
+equipo donde se usan. El Tier Model lo ataja dividiendo la infraestructura
+

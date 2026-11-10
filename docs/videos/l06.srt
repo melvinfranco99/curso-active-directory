@@ -1,0 +1,42 @@
+1
+00:00:00,450 --> 00:00:31,169
+Kerberos es el protocolo de autenticación por defecto de Active Directory,
+y entenderlo bien es, probablemente, lo más rentable de todo el curso.
+¿Por qué? Porque la mitad de los ataques famosos a AD, como el
+
+2
+00:00:32,719 --> 00:01:21,055
+La idea de Kerberos se puede resumir en una frase: demostrar quién eres
+sin enviar nunca tu contraseña por la red. Para lograrlo, introduce un
+tercero de confianza, el centro de distribución de claves o KDC, que vive
+
+3
+00:01:22,606 --> 00:02:19,054
+Veamos la primera fase, el intercambio AS guion REQ y AS guion REP, en la
+que el usuario obtiene su ticket maestro. Paso uno: Ana envía al KDC una
+petición llamada AS guion REQ. Dentro, incluye una marca de tiempo, el
+
+4
+00:02:20,603 --> 00:03:16,955
+Pasemos a la segunda fase, el intercambio TGS guion REQ y TGS guion REP,
+en la que Ana consigue acceder a un servicio concreto, por ejemplo una
+base de datos. Paso uno: Ana envía al KDC una petición TGS guion REQ en la
+
+5
+00:03:18,505 --> 00:04:08,641
+Veamos las dos fases juntas, porque así se entiende la elegancia del
+diseño. El usuario pasa por el intercambio AS una sola vez, al principio
+del día, y obtiene su TGT. A partir de ahí, cada vez que necesita acceder
+
+6
+00:04:10,191 --> 00:05:06,663
+Para cerrar, conectemos lo aprendido con el módulo de hacking, porque
+verás que cada ataque corresponde a una pieza concreta del protocolo. Si
+un usuario tiene desactivada la preautenticación, un atacante puede pedir
+
+7
+00:05:08,213 --> 00:05:54,846
+Recapitulemos esta lección clave. Kerberos autentica con tickets en lugar
+de contraseñas, mediante el KDC, que actúa como tercero de confianza
+dentro del controlador. En la primera fase, el intercambio AS, la
+

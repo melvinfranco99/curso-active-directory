@@ -1,0 +1,42 @@
+1
+00:00:00,450 --> 00:00:28,506
+En esta lección conocemos BloodHound, la herramienta que revolucionó el
+hacking de Active Directory. Su idea es brillante: en lugar de mirar los
+permisos uno a uno, los representa todos como un grafo y encuentra
+
+2
+00:00:30,056 --> 00:01:24,031
+La idea central de BloodHound es pensar en grafos. Active Directory es, en
+el fondo, una enorme red de relaciones, y un grafo es la forma natural de
+representarla. Los nodos son los objetos: usuarios, grupos, equipos,
+
+3
+00:01:25,582 --> 00:02:20,374
+Veamos un camino de ataque típico, como lo dibujaría BloodHound. Partimos
+de la cuenta de Ana, que ya hemos comprometido. BloodHound nos muestra que
+Ana es miembro del grupo de soporte. Ese grupo, por un permiso mal puesto,
+
+4
+00:02:21,924 --> 00:03:22,092
+Veamos el flujo de trabajo. Primero, la recolección: con la utilidad
+bloodhound guion python, desde nuestra máquina Linux y usando una cuenta
+de dominio cualquiera, recorremos el directorio y comprimimos todo el
+
+5
+00:03:23,641 --> 00:04:20,161
+Profundicemos en el abuso de ACLs, el corazón de estos caminos. Cada
+permiso peligroso tiene su técnica concreta. Con ForceChangePassword,
+reseteas la contraseña de la víctima y la suplantas directamente. Con
+
+6
+00:04:21,711 --> 00:05:15,831
+El otro gran abuso que revela BloodHound es la delegación de Kerberos. La
+delegación es una función legítima que permite que un servicio actúe en
+nombre de un usuario; por ejemplo, un servidor web que accede a una base
+
+7
+00:05:17,382 --> 00:06:04,038
+Recapitulemos. Active Directory es, en esencia, un grafo de relaciones en
+el que los caminos hacia el poder quedan ocultos a simple vista.
+BloodHound los revela, encontrando de forma automática la ruta más corta
+

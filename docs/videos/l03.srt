@@ -1,0 +1,54 @@
+1
+00:00:00,450 --> 00:00:25,961
+Active Directory no es magia: por debajo funciona gracias a un conjunto de
+protocolos de red bien conocidos. En esta lección vamos a diseccionar tres
+de ellos: DNS, que localiza los servicios; LDAP, que consulta el
+
+2
+00:00:27,512 --> 00:01:18,823
+Empecemos por DNS, el sistema de nombres de dominio. En Active Directory,
+DNS no es opcional: es el GPS sin el cual nada funciona. Veamos qué ocurre
+cuando un cliente quiere iniciar sesión. Lo primero que hace no es
+
+3
+00:01:20,374 --> 00:02:05,134
+Conviene conocer los registros DNS más importantes de un dominio. El
+registro que empieza por guion bajo ldap, guion bajo tcp, punto dc, punto
+msdcs, localiza los controladores de dominio. El que empieza por guion
+
+4
+00:02:06,684 --> 00:02:59,724
+El segundo protocolo es LDAP, el protocolo ligero de acceso a directorios.
+Si DNS es el GPS, LDAP es el idioma con el que se habla con el directorio.
+Todo lo que AD almacena se consulta y se modifica mediante LDAP. Un
+
+5
+00:03:01,274 --> 00:03:43,225
+Relacionado con LDAP está el catálogo global. Imagina un índice que resume
+todo el bosque: guarda una copia parcial de todos los objetos de todos los
+dominios. Gracias a él, una búsqueda puede encontrar a un usuario sin
+
+6
+00:03:44,776 --> 00:04:34,864
+Llegamos al tercer protocolo: NTLM, el sistema de autenticación heredado,
+anterior a Kerberos. Aunque es antiguo, sigue activo en casi todas las
+redes por compatibilidad. Funciona por reto-respuesta, en cuatro pasos.
+
+7
+00:04:36,414 --> 00:05:28,350
+Veamos por qué NTLM es tan peligroso y cómo se defiende. Su debilidad de
+diseño es que el hash es, en la práctica, la credencial. Como el cliente
+demuestra su identidad cifrando con el hash, a un atacante le basta con
+
+8
+00:05:29,900 --> 00:06:14,444
+Antes de cerrar, fijémonos en algo muy práctico para la fase de
+reconocimiento. Un controlador de dominio tiene una huella de puertos
+abiertos muy característica. El puerto cincuenta y tres es DNS; el ochenta
+
+9
+00:06:15,994 --> 00:06:56,866
+Hagamos el resumen. DNS localiza los servicios del dominio mediante
+registros SRV; sin él, los clientes no encuentran a los controladores.
+LDAP es el idioma con el que se consulta y se modifica el directorio, y es
+

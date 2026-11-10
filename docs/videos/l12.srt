@@ -1,0 +1,42 @@
+1
+00:00:00,450 --> 00:00:22,025
+Ya tenemos credenciales robadas y un mapa de caminos. En esta lección
+unimos las piezas para ver el movimiento lateral y la escalada de
+privilegios en acción: cómo el atacante salta de equipo en equipo y cómo
+
+2
+00:00:23,576 --> 00:01:18,512
+Cuando el atacante ya tiene unas credenciales válidas, necesita una forma
+de ejecutar código en el equipo remoto. Hay varias técnicas, y elegir una
+u otra es una cuestión de sigilo. PsExec es la clásica: crea un servicio
+
+3
+00:01:20,062 --> 00:02:16,078
+Veamos la anatomía completa del movimiento lateral, que sigue un patrón
+rítmico: comprometer, robar, saltar, repetir. El atacante parte del equipo
+de un usuario, su acceso inicial. Vuelca la memoria y roba una credencial,
+
+4
+00:02:17,627 --> 00:03:13,500
+No toda la escalada es de dominio; a menudo el atacante necesita primero
+subir de privilegios dentro del propio equipo, de un usuario limitado a
+SYSTEM, el máximo nivel local. Hay varias vías habituales. Los servicios
+
+5
+00:03:15,049 --> 00:04:08,929
+Veámoslo con comandos. Primero, el atacante comprueba el alcance de la
+credencial robada: con CrackMapExec prueba el hash de admin guion srv
+contra una lista de objetivos y descubre que es administrador en SRV guion
+
+6
+00:04:10,479 --> 00:05:07,887
+¿Cómo se rompe esta cadena? Con defensa en profundidad, en dos frentes. En
+detección, hay que vigilar la ejecución remota entre equipos mediante
+PsExec, WMI o WinRM, especialmente cuando ocurre en patrones anómalos;
+
+7
+00:05:09,437 --> 00:06:01,589
+Recapitulemos. El movimiento lateral se apoya en técnicas de ejecución
+remota legítimas, como PsExec, WMI, WinRM y DCOM, que son difíciles de
+distinguir del trabajo normal de administración. Sigue un ritmo
+

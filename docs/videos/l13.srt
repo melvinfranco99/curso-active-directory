@@ -1,0 +1,42 @@
+1
+00:00:00,450 --> 00:00:29,082
+Llegamos al clímax del módulo de hacking. En esta lección veremos qué hace
+un atacante cuando ya ha alcanzado privilegios muy altos: cómo roba de
+golpe todos los secretos del dominio con DCSync, cómo fabrica tickets
+
+2
+00:00:30,632 --> 00:01:29,480
+Empecemos por DCSync, una técnica tan elegante como devastadora. Recuerda
+que los controladores de dominio se replican entre sí sus datos, incluidos
+los hashes de las contraseñas. DCSync abusa de ese mecanismo legítimo. El
+
+3
+00:01:31,030 --> 00:02:28,918
+Veamos DCSync con comandos, usando secretsdump de Impacket. Con una cuenta
+de administrador de dominio, le pedimos específicamente el hash de la
+cuenta krbtgt usando la opción just guion dc guion user. En un instante,
+
+4
+00:02:30,468 --> 00:03:30,036
+Y ahora, el porqué de tanta insistencia con krbtgt. Recuerda de la lección
+de Kerberos que todos los TGT, los tickets maestros, van cifrados con el
+hash de la cuenta krbtgt. El controlador confía en cualquier TGT que pueda
+
+5
+00:03:31,586 --> 00:04:26,545
+El Golden Ticket encabeza toda una familia de técnicas de forja y
+persistencia que debes conocer. El Silver Ticket es su hermano menor: en
+lugar del hash de krbtgt, usa el hash de un servicio concreto para
+
+6
+00:04:28,096 --> 00:05:08,896
+Esta cita resume por qué un compromiso de dominio es tan serio. Si el hash
+de krbtgt ha sido comprometido, no basta con cambiar unas cuantas
+contraseñas. La única cura real es rotar la contraseña de krbtgt dos veces
+
+7
+00:05:10,446 --> 00:05:59,238
+Recapitulemos esta lección decisiva. DCSync abusa del mecanismo legítimo
+de replicación para robar todos los hashes del dominio, incluido el de
+krbtgt, sin instalar nada. Con ese hash, el Golden Ticket permite fabricar
+

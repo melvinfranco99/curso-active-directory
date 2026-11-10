@@ -1,0 +1,42 @@
+1
+00:00:00,450 --> 00:00:29,849
+Llegamos a la última lección del curso. Por muy bueno que sea nuestro
+hardening, debemos asumir que un atacante determinado puede entrar. La
+defensa madura no solo levanta muros, también instala alarmas y tiene un
+
+2
+00:00:31,399 --> 00:01:27,871
+Empecemos por lo más fundamental: los registros de eventos que generan los
+propios controladores. Windows deja huellas de casi todo, pero hay que
+saber cuáles vigilar. El evento cuatro mil setecientos sesenta y nueve
+
+3
+00:01:29,422 --> 00:02:21,334
+Un evento aislado en un controlador no sirve de mucho; la clave es
+centralizarlo todo. Para eso está el SIEM, el sistema de gestión de
+eventos de seguridad. El SIEM recoge los registros de varias fuentes a la
+
+4
+00:02:22,884 --> 00:03:17,820
+Más allá del SIEM genérico, existen herramientas especializadas en
+proteger la identidad. Microsoft Defender for Identity, antes conocido
+como ATA, se instala junto a los controladores, analiza su tráfico y su
+
+5
+00:03:19,370 --> 00:04:16,394
+Cuando la alerta se confirma, entra en juego la respuesta a incidentes,
+que sigue un ciclo bien definido. Preparar es la fase previa: tener el
+plan escrito, los contactos claros, las copias de seguridad probadas y,
+
+6
+00:04:17,944 --> 00:05:07,024
+Antes de despedirnos, quedémonos con las tres grandes ideas que atraviesan
+todo el curso. Primera: asume la brecha. Un defensor maduro no solo
+intenta prevenir, también detecta y responde, porque ningún sistema es
+
+7
+00:05:08,574 --> 00:05:52,062
+Y con esto cerramos el curso. La seguridad de Active Directory no es un
+producto que se instala una vez y se olvida, sino un proceso que se
+mantiene cada día. Has recorrido el camino completo: desde qué es un
+

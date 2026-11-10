@@ -1,0 +1,54 @@
+1
+00:00:00,450 --> 00:00:28,698
+En esta lección cerramos los fundamentos conociendo en detalle a los
+habitantes del directorio: los usuarios, los grupos, los equipos y los
+nombres principales de servicio, los SPN. Y, sobre todo, entenderemos los
+
+2
+00:00:30,248 --> 00:01:16,424
+Empecemos ordenando los objetos y sus identificadores. Un usuario se
+identifica por su nombre de cuenta, el sAMAccountName, como ana punto
+lopez. Un equipo es también una cuenta, y su nombre termina siempre en el
+
+3
+00:01:17,974 --> 00:02:05,710
+El concepto más potente, y más peligroso, de los grupos es el anidamiento.
+Un usuario pertenece a un grupo, pero un grupo puede, a su vez, pertenecer
+a otro grupo, y así sucesivamente. Y la pertenencia es transitiva: si Ana
+
+4
+00:02:07,260 --> 00:02:55,812
+Hay un puñado de grupos que son las joyas de la corona, y debes conocerlos
+de memoria. Domain Admins otorga control total del dominio. Enterprise
+Admins va más allá: controla todo el bosque. Schema Admins puede modificar
+
+5
+00:02:57,361 --> 00:03:51,721
+Detengámonos en los SPN, los nombres principales de servicio, porque son
+la base de uno de los ataques más comunes. Cuando un servicio de red, por
+ejemplo una base de datos SQL Server, se ejecuta bajo una cuenta de
+
+6
+00:03:53,271 --> 00:04:41,319
+Y llegamos al concepto que gobierna toda la seguridad de Active Directory:
+las listas de control de acceso, las ACL. Cada objeto del directorio, cada
+usuario, grupo o equipo, lleva adjunta una ACL, que es una lista de
+
+7
+00:04:42,870 --> 00:05:37,422
+Veamos los permisos concretos que un atacante sueña con encontrar.
+GenericAll es el máximo: control total sobre el objeto. GenericWrite
+permite modificar atributos; por ejemplo, añadir un SPN a una cuenta para
+
+8
+00:05:38,972 --> 00:06:25,724
+Las cuentas de servicio merecen una mención especial, porque son un punto
+débil recurrente. El problema clásico es doble. Por un lado, suelen tener
+contraseñas que un humano eligió hace años, débiles y que nunca caducan ni
+
+9
+00:06:27,274 --> 00:07:11,650
+Recapitulemos esta lección, que cierra el módulo de fundamentos. Hemos
+visto los objetos del directorio y el SID como su identificador real, al
+que se asignan los permisos. Hemos entendido que los grupos anidados crean
+

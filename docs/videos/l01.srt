@@ -1,0 +1,90 @@
+1
+00:00:00,450 --> 00:00:23,178
+Bienvenido al curso de Active Directory, hacking y defensa. En esta
+primera lección vamos a responder a una pregunta aparentemente sencilla
+pero fundamental: ¿qué es exactamente Active Directory? Lo entenderemos
+
+2
+00:00:24,728 --> 00:01:03,679
+Antes de empezar, este es el mapa de la lección. Primero entenderemos qué
+es un directorio y la idea de identidad centralizada, que transformó por
+completo la forma de administrar redes. Después veremos los componentes
+
+3
+00:01:05,230 --> 00:01:46,198
+La idea central de Active Directory es la de un directorio. Piensa en la
+guía telefónica de una empresa, pero una guía viva, que además guarda
+permisos. En lugar de que cada ordenador tenga su propia lista de usuarios
+
+4
+00:01:47,748 --> 00:02:36,611
+Pongámosle una definición formal. Active Directory es el servicio de
+directorio de Microsoft para redes Windows, introducido con Windows 2000 y
+presente hoy en prácticamente todas las organizaciones. Ofrece cuatro
+
+5
+00:02:38,161 --> 00:03:15,241
+¿Por qué le dedicamos un curso entero? Por su alcance. Se estima que
+alrededor del noventa por ciento de las empresas del mundo usan Active
+Directory como su directorio de identidades principal. Eso significa que,
+
+6
+00:03:16,791 --> 00:04:04,575
+Veamos las piezas sobre un diagrama. En el centro está el controlador de
+dominio, abreviado DC. Es el cerebro del sistema: un servidor Windows que
+ejecuta los servicios de directorio y atiende todas las peticiones de
+
+7
+00:04:06,125 --> 00:04:54,389
+Dentro del directorio, casi todo es un objeto, y cada objeto tiene
+atributos, como su nombre, su descripción o su contraseña. Vamos a conocer
+a sus habitantes principales. Un usuario representa una identidad que
+
+8
+00:04:55,939 --> 00:05:36,379
+Los dominios no viven aislados: se agrupan en estructuras más grandes. El
+dominio es la unidad básica de administración y replicación, por ejemplo
+empresa punto com. Cuando varios dominios comparten un espacio de nombres
+
+9
+00:05:37,930 --> 00:06:20,122
+Un punto que suele confundir al principio: Active Directory tiene dos
+estructuras paralelas. La estructura lógica describe cómo organizas los
+objetos para administrarlos: bosques, árboles, dominios, unidades
+
+10
+00:06:21,672 --> 00:07:05,280
+¿Cómo demuestra un usuario que es quien dice ser? Mediante uno de dos
+protocolos de autenticación. El moderno, y el que se usa por defecto, es
+Kerberos. Funciona con tickets que emite el controlador de dominio y tiene
+
+11
+00:07:06,830 --> 00:07:54,854
+Dos protocolos más completan el cuadro. El primero es DNS, que funciona
+como el GPS del dominio. Es tan importante que, sin DNS, los clientes
+simplemente no encuentran al controlador de dominio y nada funciona.
+
+12
+00:07:56,404 --> 00:08:41,476
+Pongámonos ahora en el lado ofensivo, que es el hilo conductor del curso.
+Un ataque a Active Directory sigue casi siempre el mismo recorrido. Todo
+empieza con un acceso inicial, normalmente mediante phishing, que le da al
+
+13
+00:08:43,026 --> 00:09:31,074
+Para que este curso te sirva de verdad, necesitas un laboratorio donde
+practicar sin romper nada ni meterte en problemas legales. El montaje
+mínimo es sencillo. Necesitas un controlador de dominio, que es un Windows
+
+14
+00:09:32,624 --> 00:10:09,896
+Hagamos un resumen de lo aprendido. Active Directory es un directorio de
+identidades que centraliza la autenticación, la autorización y la
+administración en las redes Windows. Su pieza central es el controlador de
+
+15
+00:10:11,446 --> 00:10:41,614
+Quiero que te lleves una frase de esta lección: quien controla Active
+Directory controla la organización entera, cada equipo, cada dato y cada
+usuario. Por eso dominar cómo funciona por dentro no es un lujo técnico,
+

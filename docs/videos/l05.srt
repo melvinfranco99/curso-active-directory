@@ -1,0 +1,48 @@
+1
+00:00:00,450 --> 00:00:24,233
+Si hay una funcionalidad de Active Directory que los administradores usan
+todos los días, son las directivas de grupo, las GPO. Son el mecanismo que
+permite configurar y asegurar miles de equipos desde un único punto. En
+
+2
+00:00:25,783 --> 00:01:17,647
+Empecemos por lo básico. Una GPO es un conjunto de ajustes de
+configuración que se aplican de forma automática a usuarios y equipos. Con
+ellas puedes definir la política de contraseñas, los permisos locales, qué
+
+3
+00:01:19,198 --> 00:02:07,222
+Un punto que confunde a mucha gente es el orden en que se aplican las GPO
+cuando hay varias. La regla se resume en el acrónimo LSDOU, que marca la
+secuencia: primero se aplica la política Local del equipo, después las del
+
+4
+00:02:08,771 --> 00:02:56,171
+Veamos para qué se usan de verdad las GPO en el día a día de una empresa.
+En seguridad, definen la política de contraseñas y el bloqueo de cuentas
+tras varios intentos fallidos. En restricciones, impiden cosas como usar
+
+5
+00:02:57,721 --> 00:03:52,801
+Ahora el lado oscuro: las GPO son un objetivo de primer orden para un
+atacante, y conviene entender por qué. En primer lugar, quien puede
+modificar una GPO puede ejecutar código en todos los equipos a los que esa
+
+6
+00:03:54,351 --> 00:04:41,007
+Aunque las GPO se suelen gestionar con una consola gráfica, conviene saber
+que también se manejan por línea de comandos con PowerShell, lo cual es
+clave para auditarlas a escala. Con el comando Get guion GPO guion All
+
+7
+00:04:42,557 --> 00:05:26,141
+Cerremos con buenas prácticas. Primera: mantén pocas GPO y nómbralas con
+claridad; un bosque con cientos de políticas con nombres crípticos es una
+pesadilla de mantener y una fuente de errores de seguridad. Segunda:
+
+8
+00:05:27,692 --> 00:06:11,804
+Resumamos. Las GPO son el mecanismo de configuración centralizada de
+Active Directory, con una mitad de equipo y otra de usuario, y se enlazan
+a OU, dominios o sitios. Se aplican en el orden LSDOU, local, sitio,
+

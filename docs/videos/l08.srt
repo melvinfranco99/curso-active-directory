@@ -1,0 +1,42 @@
+1
+00:00:00,450 --> 00:00:31,193
+Entramos en el módulo de hacking de Active Directory. Antes de cada
+técnica, un recordatorio serio: todo lo que veremos a partir de aquí solo
+debe practicarse en laboratorios propios o en entornos con autorización
+
+2
+00:00:32,743 --> 00:01:22,831
+Veamos el ciclo completo de un ataque. Todo empieza con el acceso inicial,
+que casi siempre llega por phishing: un empleado abre un adjunto malicioso
+y el atacante consigue ejecutar código en su equipo, con sus privilegios
+
+3
+00:01:24,382 --> 00:02:18,502
+Hay una verdad incómoda para los defensores: la enumeración lo es casi
+todo. Un atacante competente dedica la mayor parte de su tiempo a
+observar, no a lanzar exploits ruidosos. ¿Qué busca? Primero, usuarios y
+
+4
+00:02:20,051 --> 00:03:12,084
+Veamos la enumeración en acción con algunas herramientas de referencia.
+Con CrackMapExec, una navaja suiza del pentesting de AD, podemos validar
+unas credenciales contra toda una subred y ver en qué equipos funcionan y
+
+5
+00:03:13,633 --> 00:04:03,937
+Conviene que conozcas el arsenal clásico, porque lo iremos usando en las
+próximas lecciones. CrackMapExec, y su sucesor NetExec, para barridos de
+credenciales, recursos compartidos y ejecución remota. BloodHound, para
+
+6
+00:04:05,487 --> 00:05:03,831
+Como siempre en este curso, veamos también el lado defensivo. ¿Se puede
+detectar la enumeración? Sí, aunque es difícil, porque usa funciones
+legítimas. Hay señales reveladoras: un equipo que lanza consultas LDAP
+
+7
+00:05:05,382 --> 00:05:49,949
+Recapitulemos esta introducción al hacking de AD. Un ataque no es una
+línea recta, sino un ciclo que repite acceso, enumeración, escalada y
+movimiento lateral hasta alcanzar el control del dominio. La enumeración
+
